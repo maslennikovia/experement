@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace experiment.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("temperature")]
     public class TemperatureController : ControllerBase

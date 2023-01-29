@@ -15,7 +15,7 @@ namespace experiment.Data
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             // connect to sql server with connection string from app settings
-            options.UseSqlServer(Configuration.GetConnectionString("WebApiDatabase"));
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultDatabase"));
 
 
             if (!options.IsConfigured)
@@ -37,5 +37,7 @@ namespace experiment.Data
         public DbSet<Dimension> Dimensions { get; set; }
 
         public DbSet<Log> Loggs { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }

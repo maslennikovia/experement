@@ -14,7 +14,7 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        var conectionString = builder.Configuration.GetConnectionString("WebApiDatabase");
+        var conectionString = builder.Configuration.GetConnectionString("DefaultDatabase");
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
         {
             options.UseMySql(conectionString, ServerVersion.AutoDetect(conectionString));
